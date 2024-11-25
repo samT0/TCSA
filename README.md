@@ -20,7 +20,7 @@ lib/test/evaluation/local.py  # paths about testing
 ```
 
 ## Data Preparation
-Put the tracking datasets in ./data. It should look like this:
+Put the tracking datasets in `./data`. It should look like this:
 ```
 ${PROJECT_ROOT}
  -- data
@@ -45,15 +45,15 @@ ${PROJECT_ROOT}
 ```
 
 ## Training
-Download pre-trained [MAE ViT-Base weights](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_base.pth) and put it under $PROJECT_ROOT$/pretrained_models
+Download pre-trained [MAE ViT-Base weights](https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_base.pth) and put it under `$PROJECT_ROOT$/pretrained_models`
 ```
 python tracking/train.py --script tcsa --config vitb_256 --save_dir ./output --mode multiple --nproc_per_node 4 --use_wandb 1
 ```
-Replace --config with the desired model config under experiments/tcsa.
+Replace `--config` with the desired model config under `experiments/tcsa`.
 
 ## Evaluation
-Put the checkpoint into $PROJECT_ROOT$/output/config_name/... or modify the checkpoint path in testing code.
-Change the corresponding values of lib/test/evaluation/local.py to the actual benchmark saving paths
+Put the checkpoint into `$PROJECT_ROOT$/output/config_name/...` or modify the checkpoint path in testing code.
+Change the corresponding values of `lib/test/evaluation/local.py` to the actual benchmark saving paths
 
 Some testing examples:
 
